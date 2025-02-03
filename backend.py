@@ -505,7 +505,7 @@ def multi_transcriptid_info(mtid):
                     b64_html = base64.b64encode(html_Cultivated_page_source.encode()).decode()  # Convert to base64
                     html_href = f'<a href="data:text/html;base64,{b64_html}" download="{tid}_Cultivated_SNP.html">Download {tid} Cultivated SNP as .html</a>'
                     st.markdown(html_href, unsafe_allow_html=True)
-                    iframe_CODE = f'<iframe src="data:text/html;base64,{b64_html2}" width="100%" height="500"></iframe>'
+                    iframe_CODE = f'<iframe src="data:text/html;base64,{b64_html}" width="100%" height="500"></iframe>'
                     with st.expander(f"View {tid} Cultivated SNP", expanded=True):
                         st_components_html(iframe_CODE, height=500)
                     # Wild SNP Download Button
