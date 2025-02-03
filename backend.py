@@ -277,26 +277,26 @@ def transcriptid_info(tid):
             st.subheader("SNP Calling data")
             st.write("Result data for both Cultivated and Wild varieties will be downloaded in the form of HTML content. Click on the files to view data\n")
             try:
-                con1,con2=st.columns(2)
+                #con1,con2=st.columns(2)
                 # Cultivated SNP Download Button
-                with con1:
-                    html_Cultivated_page_source = automate_Cultivated_task(tid)
-                    b64_html = base64.b64encode(html_Cultivated_page_source.encode()).decode()  # Convert to base64
-                    html_href = f'<a href="data:text/html;base64,{b64_html}" download="{tid}_Cultivated_SNP.html">Download Cultivated SNP as .html</a>'
-                    st.markdown(html_href, unsafe_allow_html=True)
-                    iframe_CODE = f'<iframe src="data:text/html;base64,{b64_html}" width="100%" height="500"></iframe>'
-                    with st.expander("View Cultivated SNP", expanded=True):
-                        st_components_html(iframe_CODE, height=500)
+                #with con1:
+                html_Cultivated_page_source = automate_Cultivated_task(tid)
+                b64_html = base64.b64encode(html_Cultivated_page_source.encode()).decode()  # Convert to base64
+                html_href = f'<a href="data:text/html;base64,{b64_html}" download="{tid}_Cultivated_SNP.html">Download Cultivated SNP as .html</a>'
+                st.markdown(html_href, unsafe_allow_html=True)
+                iframe_CODE = f'<iframe src="data:text/html;base64,{b64_html}" width="100%" height="500"></iframe>'
+                with st.expander("View Cultivated SNP", expanded=True):
+                    st_components_html(iframe_CODE, height=500)
 
                 # Wild SNP Download Button
-                with con2:
-                    html_wild_page_source = automate_Wild_task(tid)
-                    b64_html2 = base64.b64encode(html_wild_page_source.encode()).decode()  # Convert to base64
-                    html_href2 = f'<a href="data:text/html;base64,{b64_html2}" download="{tid}_Wild_SNP.html">Download Wild SNP as .html</a>'
-                    st.markdown(html_href2, unsafe_allow_html=True)
-                    iframe_CODE2 = f'<iframe src="data:text/html;base64,{b64_html2}" width="100%" height="500"></iframe>'
-                    with st.expander("View Wild SNP", expanded=True):
-                        st_components_html(iframe_CODE2, height=500)
+                #with con2:
+                html_wild_page_source = automate_Wild_task(tid)
+                b64_html2 = base64.b64encode(html_wild_page_source.encode()).decode()  # Convert to base64
+                html_href2 = f'<a href="data:text/html;base64,{b64_html2}" download="{tid}_Wild_SNP.html">Download Wild SNP as .html</a>'
+                st.markdown(html_href2, unsafe_allow_html=True)
+                iframe_CODE2 = f'<iframe src="data:text/html;base64,{b64_html2}" width="100%" height="500"></iframe>'
+                with st.expander("View Wild SNP", expanded=True):
+                    st_components_html(iframe_CODE2, height=500)
 
             except Exception as e:
                 st.write("Error ! Error ! Error !")
@@ -497,27 +497,27 @@ def multi_transcriptid_info(mtid):
             st.write("Result data for both Cultivated and Wild varieties will be downloaded in the form of HTML content. Click on the files to view data\n")
             for tid in mtid_list:
                 try:
-                    com1,com2=st.columns(2)
+                    #com1,com2=st.columns(2)
                     # Cultivated SNP Download Button
-                    with com1:
-                        #st.markdown(f"#### {tid} Cultivated SNP")
-                        html_Cultivated_page_source = automate_Cultivated_task(tid)
-                        b64_html = base64.b64encode(html_Cultivated_page_source.encode()).decode()  # Convert to base64
-                        html_href = f'<a href="data:text/html;base64,{b64_html}" download="{tid}_Cultivated_SNP.html">Download {tid} Cultivated SNP as .html</a>'
-                        st.markdown(html_href, unsafe_allow_html=True)
-                        iframe_CODE = f'<iframe src="data:text/html;base64,{b64_html2}" width="100%" height="500"></iframe>'
-                        with st.expander(f"View {tid} Cultivated SNP", expanded=True):
-                            st_components_html(iframe_CODE, height=500)
+                    #with com1:
+                    #st.markdown(f"#### {tid} Cultivated SNP")
+                    html_Cultivated_page_source = automate_Cultivated_task(tid)
+                    b64_html = base64.b64encode(html_Cultivated_page_source.encode()).decode()  # Convert to base64
+                    html_href = f'<a href="data:text/html;base64,{b64_html}" download="{tid}_Cultivated_SNP.html">Download {tid} Cultivated SNP as .html</a>'
+                    st.markdown(html_href, unsafe_allow_html=True)
+                    iframe_CODE = f'<iframe src="data:text/html;base64,{b64_html2}" width="100%" height="500"></iframe>'
+                    with st.expander(f"View {tid} Cultivated SNP", expanded=True):
+                        st_components_html(iframe_CODE, height=500)
                     # Wild SNP Download Button
-                    with com2:
-                        #st.markdown(f"#### {tid} Wild SNP")
-                        html_wild_page_source = automate_Wild_task(tid)
-                        b64_html2 = base64.b64encode(html_wild_page_source.encode()).decode()  # Convert to base64
-                        html_href2 = f'<a href="data:text/html;base64,{b64_html2}" download="{tid}_Wild_SNP.html">Download {tid} Wild SNP as .html</a>'
-                        st.markdown(html_href2, unsafe_allow_html=True)
-                        iframe_CODE2 = f'<iframe src="data:text/html;base64,{b64_html2}" width="100%" height="500"></iframe>'
-                        with st.expander(f"View {tid} Wild SNP", expanded=True):
-                            st_components_html(iframe_CODE2, height=500)
+                    #with com2:
+                    #st.markdown(f"#### {tid} Wild SNP")
+                    html_wild_page_source = automate_Wild_task(tid)
+                    b64_html2 = base64.b64encode(html_wild_page_source.encode()).decode()  # Convert to base64
+                    html_href2 = f'<a href="data:text/html;base64,{b64_html2}" download="{tid}_Wild_SNP.html">Download {tid} Wild SNP as .html</a>'
+                    st.markdown(html_href2, unsafe_allow_html=True)
+                    iframe_CODE2 = f'<iframe src="data:text/html;base64,{b64_html2}" width="100%" height="500"></iframe>'
+                    with st.expander(f"View {tid} Wild SNP", expanded=True):
+                        st_components_html(iframe_CODE2, height=500)
 
                 except Exception as e:
                     st.write(f"Error fetching data for Gene ID: {tid}")
