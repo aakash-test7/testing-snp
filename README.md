@@ -10,7 +10,13 @@
   - Configuration file for Streamlit theme settings.
 - **requirements.txt**
   - Lists all Python dependencies required for the project.
-
+- **packages.txt**
+  - Contains the list of packages to be installed.
+- **sources.list**
+  - Contains the list of repositories.
+- **apt.keys**
+  - Contains the GPG key information for verifying package authenticity.
+    
 ## Functions in app.py
 - **Main Application Logic**
   - Handles page navigation and user input.
@@ -77,6 +83,11 @@
 - **google-cloud-storage**
 - **google-auth**
 
+## Packages (packages.txt)
+- **chromium**
+- **chrome-driver**
+- **google-chrome-stable**
+  
 ## Data Files in Google Cloud Storage (GCS)
 - **FPKM_Matrix(Ca).xlsx**
   - Contains FPKM matrix data.
