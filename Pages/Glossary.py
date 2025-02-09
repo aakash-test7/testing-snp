@@ -50,9 +50,15 @@ def glossary_page():
         'GENOMIC SEQUENCE': 'The complete sequence of nucleotides (DNA or RNA) that make up the entire genome of an organism.'
     }
 
-    for term, definition in glossary_entries.items():
-        with st.expander(term):
-            st.write(definition)
+    con=st.container(border=True)
+    search_term = con.text_input("Search Glossary", "")
+    
+    filtered_entries = {term: definition for term, definition in glossary_entries.items() if search_term.lower() in term.lower() or search_term.lower() in definition.lower()}
+    con=st.container(border=True)
+    with con:
+        for term, definition in filtered_entries.items():
+            with st.expander(term):
+                st.write(definition)
 
 if __name__ == "__page__":
     glossary_page()
